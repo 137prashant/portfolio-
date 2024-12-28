@@ -305,12 +305,14 @@ $(function() {
   // --------------------------------------------- //
   // Contact Form Start
   // --------------------------------------------- //
-  $("#contact-form").submit(function() { //Change
+  $("#contact-form").submit(function(event) { //Change
+    event.preventDefault();
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
+			url: "https://formspree.io/f/xvggajav", //Change
+			data: th.serialize(),
+      dataType: "json",
 		}).done(function() {
       $('.contact').find('.form').addClass('is-hidden');
       $('.contact').find('.form__reply').addClass('is-visible');
