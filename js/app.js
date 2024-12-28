@@ -307,6 +307,23 @@ $(function() {
   // --------------------------------------------- //
   $("#contact-form").submit(function(event) { //Change
     event.preventDefault();
+
+    const name = $("#name").val().trim();
+    const company = $("#company").val().trim();
+    const phone = $("#phone").val().trim();
+    const userMessage = $("#user-message").val().trim();
+  
+    // Construct the message
+    const combinedMessage = `
+      Name: ${name}
+      Company: ${company || "N/A"}
+      Phone: ${phone}
+      Message: ${userMessage}
+    `;
+  
+    // Set the constructed message into the hidden message field
+    $('textarea[name="message"]').val(combinedMessage);
+
 		var th = $(this);
 		$.ajax({
 			type: "POST",

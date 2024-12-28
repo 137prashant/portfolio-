@@ -888,26 +888,30 @@ user interactions.<br> – Enhanced user engagement and content accessibility by
               <!-- Contact Form Start -->
               <form class="form contact-form" id="contact-form">
                 <!-- Hidden Required Fields -->
-                <input type="hidden" name="project_name" value="Starter Template">
-                <input type="hidden" name="admin_email" value="support@mixdesign.club">
-                <input type="hidden" name="form_subject" value="Contact Form Message">
+                <!-- <input type="hidden" name="project_name" value="Hello Prashant">
+                <input type="hidden" name="admin_email" value="prashantsinghalpq.gmail.com">
+                <input type="hidden" name="form_subject" value="Contact Form Message"> -->
+                <label style="display: none;">
+                  Your message:
+                  <textarea name="message"></textarea> <!-- This will be populated dynamically -->
+                </label>
                 <!-- END Hidden Required Fields-->
                 <div class="container-fluid p-0">
                   <div class="row gx-0">
                     <div class="col-12 col-md-6 form__item animate-in-up">
-                      <input type="text" name="Name" placeholder="Your Name*" required>
+                      <input type="text" id="name" placeholder="Your Name*" required>
                     </div>
                     <div class="col-12 col-md-6 form__item animate-in-up">
-                      <input type="text" name="Company" placeholder="Company Name">
+                      <input type="text" id="company" placeholder="Company Name">
                     </div>
                     <div class="col-12 col-md-6 form__item animate-in-up">
-                      <input type="email" name="E-mail" placeholder="Email Adress*" required>
+                      <input type="email" name="email" placeholder="Email Adress*" required>
                     </div>
                     <div class="col-12 col-md-6 form__item animate-in-up">
-                      <input type="tel" name="Phone" placeholder="Phone Number*" required>
+                      <input type="tel" id="phone" placeholder="Phone Number*" required>
                     </div>
                     <div class="col-12 form__item animate-in-up">
-                      <textarea name="Message" placeholder="A Few Words*" required></textarea>
+                      <textarea id="user-message" placeholder="A Few Words*" required></textarea>
                     </div>
                     <div class="col-12 form__item animate-in-up">
                       <button class="btn btn-default btn-hover btn-hover-accent" type="submit">
@@ -918,6 +922,20 @@ user interactions.<br> – Enhanced user engagement and content accessibility by
                   </div>
                 </div>
               </form>
+              <!-- <form
+  action="https://formspree.io/f/xvggajav"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <button type="submit">Send</button>
+</form> -->
               <!-- Contact Form End -->
 
             </div>
