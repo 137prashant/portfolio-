@@ -65,9 +65,18 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
     // triggers when user clicks on thumbnail
     var onThumbnailsClick = function(e) {
         e = e || window.event;
-        e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
         var eTarget = e.target || e.srcElement;
+
+        // allow project website links on cards to navigate normally
+        var websiteLink = closest(eTarget, function(el) {
+            return el.classList && el.classList.contains('gallery__visit');
+        });
+        if(websiteLink) {
+            return true;
+        }
+
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
         // find root element of slide
         var clickedListItem = closest(eTarget, function(el) {
